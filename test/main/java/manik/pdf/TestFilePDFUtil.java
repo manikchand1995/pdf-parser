@@ -22,8 +22,15 @@ public class TestFilePDFUtil {
 	
 	@Test
 	public void testUnlockDocument() throws IOException {
-		String fileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/test_locked.pdf";
-		String outputFileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/test_unlocked.pdf";
-		FilePDFUtil.unlock(fileName, outputFileName, "test");
+		String fileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/RedactExportTest.pdf";
+		String outputFileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/RedactExportTest_unlocked.pdf";
+		FilePDFUtil.unlock(fileName, outputFileName, "tseTtropxEtcadeR");
+	}
+	
+	@Test
+	public void testUnlockDocument_WithoutPassword() throws IOException {
+		String fileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/RedactExportTest.pdf";
+		String outputFileName = "/home/local/ZOHOCORP/mani-5328/git/pdf-parser/test/main/resources/RedactExportTest_unlocked_withoutPass.pdf";
+		FilePDFUtil.unlock(fileName, outputFileName);
 	}
 }

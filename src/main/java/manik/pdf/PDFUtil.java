@@ -41,6 +41,7 @@ public class PDFUtil {
 	public static void unlock(InputStream pdfInput, OutputStream pdfOutput, String password) throws IOException {
         try (PDDocument document = PDDocument.load(pdfInput, password)) {
             document.setAllSecurityToBeRemoved(true);
+            document.save(pdfOutput);
         } catch (IOException e){
             System.err.println("Exception while trying to read pdf document - " + e);
         }
